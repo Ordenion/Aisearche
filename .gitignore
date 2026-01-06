@@ -1,0 +1,88 @@
+# Node modules
+node_modules/
+
+# Vite / build output
+dist/
+build/
+.vite/
+node_modules/.vite/
+
+# Production
+/.next/
+/.vercel/
+/.vercel_build_output/
+/.parcel-cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+/.pnp/
+.pnp.js
+
+# Environment files
+.env
+.env.*.local
+.env.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+coverage-final.json
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Misc
+*.tgz
+*.gz
+*.zip
+*.tar
+
+# Lockfiles (optional - ignore if you don't want lockfiles in repo)
+package-lock.json
+pnpm-lock.yaml
+
+# Others
+.storybook/
+storybook-static/
+.eslintcache
+
+# Temporary files
+*.swp
+*~
+
+# Mac resource forks
+._*
+
+# JetBrains
+out/
+
+# Ignore build and temp folders used by various tools
+.cache/
+.cache-loader/
+
+# Ignore local npm debug directories
+.npm/
+
+# End of .gitignore

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0f1724; /* dark slate */
+  --color-card: #0b1220; /* darker */
+  --color-text: #e6eef8; /* light text */
+  --color-accent: #60a5fa; /* blue */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-background text-text font-sans;
+}
+
+.container {
+  @apply max-w-4xl mx-auto p-4;
+}
