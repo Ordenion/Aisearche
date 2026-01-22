@@ -1,0 +1,12 @@
+export { default as Header } from './Header';
+export { default as Hero } from './Hero';
+export { default as DemoPreview } from './DemoPreview';
+export { default as LogoCloud } from './LogoCloud';
+export { default as BentoGrid } from './BentoGrid';
+export { default as Integrations } from './Integrations';
+export { default as Personas } from './Personas';
+export { default as BeforeAfter } from './BeforeAfter';
+export { default as PricingTeaser } from './PricingTeaser';
+export { default as FAQ } from './FAQ';
+export { default as FinalCTA } from './FinalCTA';
+export { default as Footer } from './Footer';

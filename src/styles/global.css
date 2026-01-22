@@ -7,16 +7,42 @@
   --color-card: #0b1220; /* darker */
   --color-text: #e6eef8; /* light text */
   --color-accent: #60a5fa; /* blue */
+  --color-page: #f7f8fa; /* light page background */
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
 body {
-  @apply bg-background text-text font-sans;
+  @apply font-sans antialiased;
 }
 
 .container {
   @apply max-w-4xl mx-auto p-4;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }

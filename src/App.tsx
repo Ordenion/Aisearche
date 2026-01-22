@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import AppShell from './layouts/AppShell';
@@ -13,17 +13,23 @@ const RequireAuth = ({ children }: { children?: any }) => {
 };
 
 const App = () => {
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/';
+
   return (
     <div>
-      <nav style={{ padding: 8, borderBottom: '1px solid #333' }}>
-        <Link to="/" style={{ marginRight: 8 }}>
-          Home
-        </Link>
-        <Link to="/login" style={{ marginRight: 8 }}>
-          Login
-        </Link>
-        <Link to="/app">App</Link>
-      </nav>
+      {/* Only show default nav on non-landing pages */}
+      {!isLandingPage && (
+        <nav style={{ padding: 8, borderBottom: '1px solid #333' }}>
+          <Link to="/" style={{ marginRight: 8 }}>
+            Home
+          </Link>
+          <Link to="/login" style={{ marginRight: 8 }}>
+            Login
+          </Link>
+          <Link to="/app">App</Link>
+        </nav>
+      )}
 
       <Routes>
         <Route path="/" element={<Home />} />
