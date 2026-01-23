@@ -14,21 +14,21 @@ const Hero = () => {
           {/* Left column */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-heading leading-tight">
                 Ship faster,
-                <span className="text-blue-600"> stress less</span>
+                <span className="text-primary"> stress less</span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-lg">
+              <p className="text-xl text-text max-w-lg">
                 The all-in-one platform that helps teams automate workflows,
                 centralize knowledge, and focus on what matters.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5">
+              <button className="px-6 py-3 bg-primary text-text-on-primary font-semibold rounded-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5">
                 Start free
               </button>
-              <button className="px-6 py-3 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              <button className="px-6 py-3 bg-surface text-text font-semibold rounded-xl border border-border hover:bg-surface-alt transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
                 <span className="flex items-center gap-2">
                   <span>▶</span> Watch demo
                 </span>
@@ -37,7 +37,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-6 pt-2">
               {bullets.map((bullet, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-600">
+                <div key={index} className="flex items-center gap-2 text-text-muted">
                   <span className="text-lg">{bullet.icon}</span>
                   <span className="text-sm">{bullet.text}</span>
                 </div>

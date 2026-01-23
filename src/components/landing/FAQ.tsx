@@ -12,29 +12,29 @@ const FAQ = () => {
     <section id="faq" className="py-16 md:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
             Frequently asked questions
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-text">
             Everything you need to know to get started.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+        <div className="bg-surface rounded-2xl border border-border shadow-card overflow-hidden">
           {faqs.map((faq, index) => (
             <div
               key={faq.id}
-              className={`${index !== 0 ? 'border-t border-gray-100' : ''}`}
+              className={`${index !== 0 ? 'border-t border-border' : ''}`}
             >
               <button
                 onClick={() => toggleFaq(faq.id)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-surface-alt transition-colors"
               >
-                <span className="font-medium text-gray-900 pr-4">
+                <span className="font-medium text-text-heading pr-4">
                   {faq.question}
                 </span>
                 <span
-                  className={`flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 transition-transform ${
+                  className={`flex-shrink-0 w-6 h-6 rounded-full bg-surface-alt flex items-center justify-center text-text-muted transition-transform ${
                     openId === faq.id ? 'rotate-180' : ''
                   }`}
                 >
@@ -49,7 +49,7 @@ const FAQ = () => {
                   openId === faq.id ? 'max-h-48' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-gray-600">
+                <div className="px-6 pb-5 text-text">
                   {faq.answer}
                 </div>
               </div>

@@ -2,12 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== LIGHT THEME (default) ===== */
 :root {
-  --color-bg: #0f1724; /* dark slate */
-  --color-card: #0b1220; /* darker */
-  --color-text: #e6eef8; /* light text */
-  --color-accent: #60a5fa; /* blue */
-  --color-page: #f7f8fa; /* light page background */
+  /* Primary */
+  --color-primary: #6D28D9;
+  --color-primary-hover: #5B21B6;
+  --color-primary-soft: #A78BFA;
+  --color-lilac: #D8B4FE;
+
+  /* Neutrals */
+  --color-page-bg: #F7F6FB;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F2EEFF;
+  --color-border: #E7E2F3;
+
+  /* Text */
+  --color-text-heading: #0F172A;
+  --color-text: #1F2937;
+  --color-text-muted: #6B7280;
+  --color-text-faint: #9CA3AF;
+  --color-link: #6D28D9;
+  --color-link-hover: #5B21B6;
+  --color-text-on-primary: #FFFFFF;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #A78BFA 0%, #D8B4FE 100%);
+  --gradient-premium: linear-gradient(135deg, #9F7AEA 0%, #D8B4FE 55%, #E9D5FF 100%);
+
+  /* Shadows */
+  --shadow-card: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-hover: 0 12px 32px rgba(17, 24, 39, 0.12);
+
+  /* Legacy support */
+  --color-bg: var(--color-page-bg);
+  --color-card: var(--color-surface);
+  --color-accent: var(--color-primary);
+  --color-page: var(--color-page-bg);
+}
+
+/* ===== DARK THEME ===== */
+.dark {
+  /* Primary */
+  --color-primary: #8B5CF6;
+  --color-primary-hover: #7C3AED;
+  --color-primary-soft: #3B0A80;
+  --color-lilac: #C4B5FD;
+
+  /* Neutrals */
+  --color-page-bg: #07050D;
+  --color-surface: #0F0A1A;
+  --color-surface-alt: #140D24;
+  --color-border: #241A3A;
+
+  /* Text */
+  --color-text-heading: #F8F7FF;
+  --color-text: #EAE6FF;
+  --color-text-muted: #C7BDE0;
+  --color-text-faint: #9C90C4;
+  --color-link: #C4B5FD;
+  --color-link-hover: #DDD6FE;
+  --color-text-on-primary: #07050D;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #3B0A80 0%, #6D28D9 45%, #C4B5FD 100%);
+  --gradient-premium: linear-gradient(135deg, #4C00FF 0%, #7C3AED 50%, #C4B5FD 100%);
+
+  /* Shadows & Glow */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 16px 44px rgba(0, 0, 0, 0.55);
+  --glow-accent: 0 0 0 4px rgba(139, 92, 246, 0.25), 0 12px 40px rgba(124, 58, 237, 0.25);
 }
 
 html,

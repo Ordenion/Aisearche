@@ -4,8 +4,8 @@ const LogoCloud = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-8 md:p-12">
-          <p className="text-center text-sm font-medium text-gray-500 mb-8">
+        <div className="bg-surface rounded-2xl border border-border shadow-card p-8 md:p-12">
+          <p className="text-center text-sm font-medium text-text-muted mb-8">
             Trusted by teams at innovative companies
           </p>
 
@@ -16,8 +16,8 @@ const LogoCloud = () => {
                 className="flex items-center justify-center"
               >
                 {/* Placeholder logo */}
-                <div className="flex items-center gap-2 text-gray-400 hover:text-gray-600 transition-colors">
-                  <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center text-xs font-bold">
+                <div className="flex items-center gap-2 text-text-faint hover:text-text-muted transition-colors">
+                  <div className="w-8 h-8 bg-surface-alt rounded-lg flex items-center justify-center text-xs font-bold">
                     {company.charAt(0)}
                   </div>
                   <span className="text-sm font-medium hidden md:inline">{company}</span>

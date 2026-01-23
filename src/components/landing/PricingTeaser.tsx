@@ -5,10 +5,10 @@ const PricingTeaser = () => {
     <section id="pricing" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-text max-w-2xl mx-auto">
             Start free and scale as you grow. No hidden fees, no surprises.
           </p>
         </div>
@@ -18,35 +18,35 @@ const PricingTeaser = () => {
             <div
               key={plan.id}
               className={`
-                bg-white rounded-2xl border shadow-card p-8 relative
+                bg-surface rounded-2xl border shadow-card p-8 relative
                 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200
                 ${plan.highlighted
-                  ? 'border-blue-200 ring-2 ring-blue-100'
-                  : 'border-gray-100'}
+                  ? 'border-primary/30 ring-2 ring-primary/10'
+                  : 'border-border'}
               `}
             >
               {/* Highlight badge */}
               {plan.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="bg-primary text-text-on-primary text-xs font-semibold px-3 py-1 rounded-full">
                     Most popular
                   </span>
                 </div>
               )}
 
               {/* Plan name */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-text-heading mb-2">
                 {plan.name}
               </h3>
 
               {/* Price */}
               <div className="mb-4">
-                <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                <span className="text-gray-500">{plan.period}</span>
+                <span className="text-4xl font-bold text-text-heading">{plan.price}</span>
+                <span className="text-text-muted">{plan.period}</span>
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 text-sm mb-6">
+              <p className="text-text text-sm mb-6">
                 {plan.description}
               </p>
 
@@ -55,8 +55,8 @@ const PricingTeaser = () => {
                 className={`
                   w-full py-3 px-4 rounded-xl font-semibold transition-all
                   ${plan.highlighted
-                    ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/25'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}
+                    ? 'bg-primary text-text-on-primary hover:bg-primary-hover shadow-lg shadow-primary/25'
+                    : 'bg-surface-alt text-text hover:bg-border'}
                 `}
               >
                 {plan.cta}
@@ -65,7 +65,7 @@ const PricingTeaser = () => {
               {/* Features */}
               <ul className="mt-6 space-y-3">
                 {plan.features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm text-gray-600">
+                  <li key={index} className="flex items-center gap-3 text-sm text-text">
                     <span className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xs">
                       ✓
                     </span>
@@ -81,7 +81,7 @@ const PricingTeaser = () => {
         <div className="text-center mt-8">
           <a
             href="#"
-            className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+            className="inline-flex items-center text-link font-medium hover:text-link-hover transition-colors"
           >
             Full pricing details
             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
