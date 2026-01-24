@@ -15,7 +15,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-heading leading-tight">
-                Ship faster,
+                Ship slowe,
                 <span className="text-primary"> stress less</span>
               </h1>
               <p className="text-xl text-text max-w-lg">
