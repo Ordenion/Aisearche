@@ -32,9 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-lg">
-              A
-            </div>
+            <img src="/logo.png" alt="WebGlazer" className="w-12 h-16 rounded-xl object-contain" />
             <span className="font-bold text-text text-lg">WebGlazer</span>
           </Link>
 

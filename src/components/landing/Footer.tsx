@@ -8,9 +8,6 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-text-on-primary font-bold">
-                A
-              </div>
               <span className="font-bold text-text-heading">WebGlazer</span>
             </div>
             <p className="text-sm text-text-muted mb-4">
