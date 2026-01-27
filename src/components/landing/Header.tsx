@@ -37,7 +37,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/*<nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -47,7 +47,7 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-          </nav>
+          </nav>*/}
 
           {/* Right side - CTA */}
           <div className="hidden md:flex items-center gap-4">
@@ -66,7 +66,7 @@ const Header = () => {
                 </svg>
               )}
             </button>
-            <Link
+            {/*<Link
               to="/login"
               className="text-sm font-medium text-text-muted hover:text-text transition-colors"
             >
@@ -77,7 +77,7 @@ const Header = () => {
               className="px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-all shadow-card hover:shadow-card-hover"
             >
               Start free
-            </Link>
+            </Link>*/}
           </div>
 
           {/* Mobile menu button */}
@@ -99,7 +99,7 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border bg-surface">
             <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
+              {/*{navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -108,7 +108,7 @@ const Header = () => {
                 >
                   {link.label}
                 </a>
-              ))}
+              ))}*/}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 <button
                   onClick={toggleTheme}
@@ -130,18 +130,18 @@ const Header = () => {
                     </>
                   )}
                 </button>
-                <Link
+                {/*<Link
                   to="/login"
                   className="text-sm font-medium text-text-muted hover:text-text transition-colors py-2"
                 >
-                  Sign in
+                  Sign in lol
                 </Link>
                 <Link
                   to="/app"
                   className="px-4 py-3 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-all text-center"
                 >
                   Start free
-                </Link>
+                </Link>*/}
               </div>
             </nav>
           </div>
