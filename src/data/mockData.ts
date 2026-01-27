@@ -193,28 +193,40 @@ export const personas = [
   },
 ];
 
+
+
+
+
+
+
+
+
+
+
+
+
 export const beforeAfterData = {
   before: {
     title: 'Before',
     items: [
-      'Hours lost to manual data entry',
-      'Information scattered across tools',
-      'Missed deadlines and dropped balls',
-      'Constant context switching',
+      'Not mentioned in ChatGPT / Gemini answers',
+      'Competitors show up instead of you',
+      'Wrong or outdated information about your brand',
+      'No idea why AI doesn’t recommend you',
     ],
   },
   after: {
     title: 'After',
     items: [
-      'Automated workflows save 10+ hours/week',
-      'Single source of truth for everything',
-      'Never miss a deadline again',
-      'Deep focus time restored',
+      'Your brand appears in high-intent AI prompts',
+      'You become the default recommendation (vs competitors)',
+      'AI answers are accurate and consistent about your business',
+      'Clear action plan: what to publish + where to publish it',
     ],
     metrics: [
-      { value: '-40%', label: 'Time on admin' },
-      { value: '+2x', label: 'Team output' },
-      { value: '10hrs', label: 'Saved weekly' },
+      { value: '+30–60%', label: 'More AI mentions' },
+      { value: '2x', label: 'More “brand-ready” sources' },
+      { value: '48hrs', label: 'Audit delivery time' },
     ],
   },
 };

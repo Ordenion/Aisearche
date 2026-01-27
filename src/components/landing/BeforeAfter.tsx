@@ -11,7 +11,7 @@ const BeforeAfter = () => {
             The transformation
           </h2>
           <p className="text-lg text-text max-w-2xl mx-auto">
-            See what changes when you switch to a smarter way of working.
+            See what changes when you start optimizing for AI search.
           </p>
         </div>
 

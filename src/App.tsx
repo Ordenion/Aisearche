@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Audit from './pages/Audit';
 import AppShell from './layouts/AppShell';
 import AppHome from './pages/AppHome';
 import NotFound from './components/NotFound';
@@ -19,7 +20,7 @@ const App = () => {
   return (
     <div>
       {/* Only show default nav on non-landing pages */}
-      {!isLandingPage && (
+      {/*{!isLandingPage && (
         <nav style={{ padding: 8, borderBottom: '1px solid #333' }}>
           <Link to="/" style={{ marginRight: 8 }}>
             Home
@@ -29,11 +30,12 @@ const App = () => {
           </Link>
           <Link to="/app">App</Link>
         </nav>
-      )}
+      )}*/}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/audit" element={<Audit />} />
         <Route
           path="/app"
           element={

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const FinalCTA = () => {
   return (
     <section className="py-16 md:py-24">
@@ -9,24 +11,24 @@ const FinalCTA = () => {
 
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-heading mb-4">
-              Ready to work smarter?
+              Ready to become visible in AI search?
             </h2>
             <p className="text-lg text-text max-w-2xl mx-auto mb-8">
-              Join thousands of teams who've already transformed the way they work.
-              Start free, no credit card required.
+              Join early companies improving how they show up in ChatGPT, Gemini, and Perplexity.
+Get a free AI visibility audit — we’ll email you the results.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-primary text-text-on-primary font-semibold rounded-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5">
-                Start free today
-              </button>
-              <button className="px-8 py-4 bg-surface text-text font-semibold rounded-xl border border-border hover:bg-surface-alt transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              <Link to="/audit" className="px-8 py-4 bg-primary text-text-on-primary font-semibold rounded-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5">
+                Get free AI audit
+              </Link>
+              {/*<button className="px-8 py-4 bg-surface text-text font-semibold rounded-xl border border-border hover:bg-surface-alt transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
                 Talk to sales
-              </button>
+              </button>*/}
             </div>
 
             <p className="mt-6 text-sm text-text-muted">
-              Free 14-day trial · No credit card required · Cancel anytime
+              Free audit · Results in 48h · No commitment
             </p>
           </div>
         </div>
