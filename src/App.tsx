@@ -1,5 +1,4 @@
-import React from 'react';
-import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Audit from './pages/Audit';
@@ -14,8 +13,6 @@ const RequireAuth = ({ children }: { children?: any }) => {
 };
 
 const App = () => {
-  const location = useLocation();
-  const isLandingPage = location.pathname === '/';
 
   return (
     <div>
