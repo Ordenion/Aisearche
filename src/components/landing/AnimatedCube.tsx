@@ -2,7 +2,7 @@ import { useAnimationFrame } from "motion/react";
 import React, { useRef } from "react";
 
 const AnimatedCube = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef(null as HTMLDivElement | null);
 
   useAnimationFrame((t: number) => {
     if (!ref.current) return;
