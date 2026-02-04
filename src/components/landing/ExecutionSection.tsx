@@ -169,9 +169,6 @@ export function ExecutionSection() {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary bg-primary/10 rounded-full mb-5">
-            Built for This Moment
-          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
             This is <span className="gradient-text">exactly</span> what we built
           </h2>
@@ -219,50 +216,73 @@ export function ExecutionSection() {
 
         <div
           className={cn(
-            "max-w-4xl mx-auto mb-20",
+            "max-w-5xl mx-auto",
             "transition-all duration-700 delay-100",
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
           <div className="text-center mb-10">
             <h3 className="text-xl md:text-2xl font-semibold text-foreground">The industry is shifting. We're ready.</h3>
+            <p className="text-sm md:text-base text-muted-foreground mt-3">
+              Social proof from the people shaping the future of search.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-card/40 border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
-              <p className="text-foreground/80 leading-relaxed mb-4">
+              <p className="text-foreground/80 leading-relaxed mb-6">
                 "60% of searches now end without a click. If you aren't the cited answer, you aren't seen at all."
               </p>
-              <p className="text-sm text-muted-foreground">— HubSpot Marketing Trends Report</p>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&w=80&h=80&q=80"
+                  alt="HubSpot analyst"
+                  className="w-10 h-10 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">HubSpot Research</p>
+                  <p className="text-xs text-muted-foreground">Marketing Trends Report</p>
+                </div>
+              </div>
             </div>
 
             <div className="p-6 rounded-xl bg-card/40 border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
-              <p className="text-foreground/80 leading-relaxed mb-4">
+              <p className="text-foreground/80 leading-relaxed mb-6">
                 "We are moving from a world of search engine optimization to 'Search Everywhere Optimization.'"
               </p>
-              <p className="text-sm text-muted-foreground">— Neil Patel, CMO & Co-Founder of NP Digital</p>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=facearea&w=80&h=80&q=80"
+                  alt="Neil Patel"
+                  className="w-10 h-10 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Neil Patel</p>
+                  <p className="text-xs text-muted-foreground">CMO & Co-Founder, NP Digital</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-xl bg-card/40 border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
+              <p className="text-foreground/80 leading-relaxed mb-6">
+                "The future of search is not about lists of links. It's about getting the answer. It's about a shift from search engines to answer engines."
+              </p>
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=facearea&w=80&h=80&q=80"
+                  alt="Sam Altman"
+                  className="w-10 h-10 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Sam Altman</p>
+                  <p className="text-xs text-muted-foreground">CEO, OpenAI</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div
-          className={cn(
-            "relative py-16 md:py-20",
-            "transition-all duration-1000 delay-300",
-            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
-
-          <blockquote className="relative text-center max-w-5xl mx-auto px-4">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-relaxed md:leading-relaxed">
-              "The future of search is not about lists of links. It's about getting the answer. It's about a shift from <span className="gradient-text font-semibold">search engines</span> to <span className="gradient-text font-semibold">answer engines.</span>"
-            </p>
-            <footer className="mt-8 flex flex-col items-center gap-1">
-              <span className="text-lg font-semibold text-foreground">Sam Altman</span>
-              <span className="text-sm text-muted-foreground">CEO of OpenAI</span>
-            </footer>
-          </blockquote>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Bot, TrendingUp, Zap, DollarSign } from "lucide-react";
+import { Bot, TrendingUp, DollarSign } from "lucide-react";
 import { AuditInput } from "./AuditInput";
 import { AILogos } from "./AILogos";
 import { FloatingCard } from "./FloatingCard";
@@ -16,13 +16,6 @@ export function HeroSection() {
       />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 text-primary text-sm font-medium">
-            <Zap size={14} className="animate-pulse" />
-            <span>AI SALES ENGINE</span>
-          </div>
-        </div>
-
         <div className="text-center max-w-4xl mx-auto mb-6">
           <p className="text-muted-foreground text-sm md:text-base uppercase tracking-wider mb-4">
             The Google Game is Old News

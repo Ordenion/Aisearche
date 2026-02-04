@@ -132,11 +132,13 @@ export function WakeUpSection() {
                     <Icon size={24} />
                   </div>
 
-                  <div className="mb-4">
+                  <div className="mb-4 flex items-end gap-1">
                     <span className={`text-5xl md:text-6xl font-bold tracking-tight ${textClass}`}>
                       {counts[index]}
                     </span>
-                    <span className={`text-3xl md:text-4xl font-bold ${textClass}`}>{stat.suffix}</span>
+                    <span className={`text-5xl md:text-6xl font-bold tracking-tight ${textClass}`}>
+                      {stat.suffix}
+                    </span>
                   </div>
 
                   <p className="text-foreground font-semibold text-lg mb-2">{stat.label}</p>

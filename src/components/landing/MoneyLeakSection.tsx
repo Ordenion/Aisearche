@@ -271,14 +271,14 @@ export function MoneyLeakSection() {
                 </div>
 
                 <div className="flex-1 w-full">
-                  <div className={`relative ${isReversed ? "lg:text-right" : ""}`}>
-                    <span className="text-8xl md:text-9xl font-bold gradient-text opacity-20 absolute -top-8 md:-top-12 -left-4 md:-left-8 select-none">
+                  <div className={`flex flex-col ${isReversed ? "lg:items-end lg:text-right" : ""}`}>
+                    <span className="text-4xl md:text-5xl font-bold gradient-text mb-4">
                       {step.number}
                     </span>
 
-                    <div className="relative z-10 pt-8">
+                    <div className="max-w-lg">
                       <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{step.title}</h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">{step.description}</p>
+                      <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 </div>

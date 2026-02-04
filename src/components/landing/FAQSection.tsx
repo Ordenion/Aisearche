@@ -30,9 +30,6 @@ export function FAQSection() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 text-primary text-sm font-medium mb-6">
-            <span>FAQ</span>
-          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
             Answers Before You Ask
           </h2>

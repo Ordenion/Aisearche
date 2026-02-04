@@ -96,7 +96,7 @@ export function AuditInput() {
                   }`}
                 >
                   <span className="text-lg sm:text-xl flex-shrink-0">{option.icon}</span>
-                  <span className="line-clamp-2 sm:line-clamp-1">{option.label}</span>
+                  <span className="whitespace-normal break-words leading-snug">{option.label}</span>
                 </button>
               ))}
             </div>

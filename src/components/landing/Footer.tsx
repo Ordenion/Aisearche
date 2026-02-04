@@ -19,7 +19,6 @@ const Footer = () => {
               </div>
               <span className="font-semibold text-lg text-foreground">Aisearche</span>
             </div>
-            <p className="text-sm text-muted-foreground mb-2">The AI Sales Engine</p>
             <p className="text-xs text-muted-foreground max-w-xs">
               You build the business. We make sure the machines know how to sell it.
             </p>

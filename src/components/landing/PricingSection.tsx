@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import { Check, ArrowRight, Star, Zap } from "lucide-react";
+import { Check, ArrowRight, Star } from "lucide-react";
 
 const plans = [
   {
@@ -43,10 +43,6 @@ export function PricingSection() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-primary/20 text-primary text-sm font-medium mb-6">
-            <Zap size={14} />
-            <span>PRICING</span>
-          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
             An Entire Sales Team for <span className="gradient-text">Less Than a Lunch</span>
           </h2>
