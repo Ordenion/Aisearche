@@ -1,147 +1,92 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { navLinks } from '../../data/mockData';
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/Button";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Why Now", href: "#wake-up" },
+  { label: "The Leak", href: "#money-leak" },
+  { label: "Execution", href: "#execution" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-surface/80 backdrop-blur-lg shadow-card border-b border-border'
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="WebGlazer" className="w-12 h-16 rounded-xl object-contain" />
-            <span className="font-bold text-text text-lg">WebGlazer</span>
-          </Link>
+          <a href="#" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <span className="text-primary font-bold text-lg">A</span>
+            </div>
+            <span className="font-semibold text-lg text-foreground">Aisearche</span>
+          </a>
 
-          {/* Desktop Navigation */}
-          {/*<nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-text-muted hover:text-text transition-colors"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
               >
                 {link.label}
               </a>
             ))}
-          </nav>*/}
+          </nav>
 
-          {/* Right side - CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-text-muted hover:text-text transition-colors rounded-lg hover:bg-surface-alt"
-              aria-label="Toggle theme"
-            >
-              {isDarkMode ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </button>
-            {/*<Link
-              to="/login"
-              className="text-sm font-medium text-text-muted hover:text-text transition-colors"
-            >
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="ghost" size="sm">
               Sign in
-            </Link>
-            <Link
-              to="/app"
-              className="px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-all shadow-card hover:shadow-card-hover"
-            >
-              Start free
-            </Link>*/}
+            </Button>
+            <Button variant="glow" size="sm">
+              Audit My Site
+            </Button>
           </div>
 
-          {/* Mobile menu button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-text-muted hover:text-text"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Toggle navigation"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-surface">
-            <nav className="flex flex-col gap-4">
-              {/*{navLinks.map((link) => (
+        {isMobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in">
+            <nav className="flex flex-col gap-1">
+              {navLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-text-muted hover:text-text transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-colors"
                 >
                   {link.label}
                 </a>
-              ))}*/}
-              <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <button
-                  onClick={toggleTheme}
-                  className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-text transition-colors py-2"
-                >
-                  {isDarkMode ? (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                      Light mode
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                      </svg>
-                      Dark mode
-                    </>
-                  )}
-                </button>
-                {/*<Link
-                  to="/login"
-                  className="text-sm font-medium text-text-muted hover:text-text transition-colors py-2"
-                >
-                  Sign in lol
-                </Link>
-                <Link
-                  to="/app"
-                  className="px-4 py-3 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-all text-center"
-                >
-                  Start free
-                </Link>*/}
+              ))}
+              <div className="flex flex-col gap-2 mt-4 px-4">
+                <Button variant="ghost" className="w-full justify-center">
+                  Sign in
+                </Button>
+                <Button variant="glow" className="w-full justify-center">
+                  Audit My Site
+                </Button>
               </div>
             </nav>
           </div>

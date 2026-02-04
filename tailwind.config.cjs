@@ -1,58 +1,176 @@
-module.exports = {
-  content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
-  darkMode: 'class',
-  theme: {
-    extend: {
-      colors: {
-        // Primary
-        primary: {
-          DEFAULT: 'var(--color-primary)',
-          hover: 'var(--color-primary-hover)',
-          soft: 'var(--color-primary-soft)',
-        },
-        lilac: 'var(--color-lilac)',
-        
-        // Neutrals
-        'page-bg': 'var(--color-page-bg)',
-        surface: {
-          DEFAULT: 'var(--color-surface)',
-          alt: 'var(--color-surface-alt)',
-        },
-        border: 'var(--color-border)',
-        
-        // Text
-        text: {
-          DEFAULT: 'var(--color-text)',
-          heading: 'var(--color-text-heading)',
-          muted: 'var(--color-text-muted)',
-          faint: 'var(--color-text-faint)',
-          'on-primary': 'var(--color-text-on-primary)',
-        },
-        link: {
-          DEFAULT: 'var(--color-link)',
-          hover: 'var(--color-link-hover)',
-        },
+const plugin = require("tailwindcss/plugin");
 
-        // Legacy
-        background: 'var(--color-bg)',
-        card: 'var(--color-card)',
-        accent: 'var(--color-accent)',
-        page: 'var(--color-page)',
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx,js,jsx}"
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px"
+      }
+    },
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"]
       },
-      boxShadow: {
-        'card': 'var(--shadow-card)',
-        'card-hover': 'var(--shadow-hover)',
-        'glow': 'var(--glow-accent)',
-      },
-      backgroundImage: {
-        'gradient-hero': 'var(--gradient-hero)',
-        'gradient-premium': 'var(--gradient-premium)',
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))"
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))"
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))"
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))"
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))"
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))"
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))"
+        },
+        glow: {
+          DEFAULT: "hsl(var(--glow))",
+          purple: "hsl(var(--glow-purple))",
+          orange: "hsl(var(--glow-orange))",
+          green: "hsl(var(--glow-green))"
+        },
+        surface: {
+          elevated: "hsl(var(--surface-elevated))",
+          glass: "hsl(var(--surface-glass))"
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))"
+        }
       },
       borderRadius: {
-        '2xl': '16px',
-        '3xl': '24px',
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 8px)"
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0", opacity: "0" },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+            opacity: "1"
+          }
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+            opacity: "1"
+          },
+          to: { height: "0", opacity: "0" }
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "fade-out": {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" }
+        },
+        "scale-in": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" }
+        },
+        "slide-in-right": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" }
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-20px) rotate(2deg)" }
+        },
+        "float-reverse": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(20px) rotate(-2deg)" }
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px -5px hsl(var(--primary) / 0.4)"
+          },
+          "50%": {
+            boxShadow: "0 0 40px -5px hsl(var(--primary) / 0.6)"
+          }
+        },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" }
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        },
+        orbit: {
+          "0%": {
+            transform: "rotate(0deg) translateX(100px) rotate(0deg)"
+          },
+          "100%": {
+            transform: "rotate(360deg) translateX(100px) rotate(-360deg)"
+          }
+        }
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
+        "fade-out": "fade-out 0.3s ease-out",
+        "scale-in": "scale-in 0.2s ease-out",
+        "slide-in-right": "slide-in-right 0.3s ease-out",
+        float: "float 6s ease-in-out infinite",
+        "float-reverse": "float-reverse 6s ease-in-out infinite",
+        "float-slow": "float 8s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 2s infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        shimmer: "shimmer 2s linear infinite",
+        "gradient-shift": "gradient-shift 3s ease infinite",
+        orbit: "orbit 20s linear infinite"
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
+      }
     }
   },
-  plugins: []
+  plugins: [require("tailwindcss-animate"), plugin(({ addVariant }) => {
+    addVariant("hocus", "&:hover, &:focus");
+  })]
 };

@@ -2,12 +2,18 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "types": ["vite/client"]
   },
   "include": ["src"]
 }

@@ -1,34 +1,28 @@
-import Header from '../components/landing/Header';
-import Hero from '../components/landing/Hero';
-import LogoCloud from '../components/landing/LogoCloud';
-import BentoGrid from '../components/landing/BentoGrid';
-import Integrations from '../components/landing/Integrations';
-import Personas from '../components/landing/Personas';
-import BeforeAfter from '../components/landing/BeforeAfter';
-import PricingTeaser from '../components/landing/PricingTeaser';
-import FAQ from '../components/landing/FAQ';
-import FinalCTA from '../components/landing/FinalCTA';
-import Footer from '../components/landing/Footer';
+import Header from "@/components/landing/Header";
+import Footer from "@/components/landing/Footer";
+import { HeroSection } from "@/components/landing/HeroSection";
+import { WakeUpSection } from "@/components/landing/WakeUpSection";
+import { MoneyLeakSection } from "@/components/landing/MoneyLeakSection";
+import { ExecutionSection } from "@/components/landing/ExecutionSection";
+import { FunFactorSection } from "@/components/landing/FunFactorSection";
+import { PricingSection } from "@/components/landing/PricingSection";
+import { FAQSection } from "@/components/landing/FAQSection";
+import { CTASection } from "@/components/landing/CTASection";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-page">
+    <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Spacer for fixed header */}
-      <div className="h-16 md:h-20" />
-
       <main>
-        <Hero />
-        <BeforeAfter />
-        {/*<LogoCloud />
-        <BentoGrid />
-        <Integrations />
-        <Personas />
-        <BeforeAfter />
-        <PricingTeaser />
-        <FAQ />*/}
-        <FinalCTA />
+        <HeroSection />
+        <WakeUpSection />
+        <MoneyLeakSection />
+        <FunFactorSection />
+        <ExecutionSection />
+        <PricingSection />
+        <FAQSection />
+        <CTASection />
       </main>
 
       <Footer />

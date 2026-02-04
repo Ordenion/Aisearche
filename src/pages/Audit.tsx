@@ -1,10 +1,10 @@
-import Footer from '../components/landing/Footer';
-import Header from '../components/landing/Header';
-import AuditForm from '../components/landing/AuditForm';
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
+import AuditForm from "@/components/landing/AuditForm";
 
 const Audit = () => {
   return (
-    <div className="min-h-screen bg-page flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
 
       {/* Spacer for fixed header */}
