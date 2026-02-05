@@ -26,25 +26,29 @@ const faqs = [
 export function FAQSection() {
   return (
     <section id="faq" className="relative py-24 md:py-32">
-      <div className="absolute inset-0 bg-gradient-section opacity-40" />
+      <div className="absolute inset-x-0 top-0 h-[55%] bg-[hsl(var(--glow-purple))]" />
+      <div className="absolute -right-24 top-10 w-[320px] h-[320px] bg-[hsl(var(--glow-green))] rounded-full opacity-90" />
+      <div className="absolute inset-0 grid-pattern opacity-10" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Answers Before You Ask
-          </h2>
-          <p className="text-lg text-muted-foreground text-balance">
-            Straight talk about what we do, how it works, and what to expect.
-          </p>
+          <div className="poster-card inline-block px-6 py-5">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4 text-balance">
+              Answers Before You Ask
+            </h2>
+            <p className="text-lg text-ink-secondary text-balance">
+              Straight talk about what we do, how it works, and what to expect.
+            </p>
+          </div>
         </div>
 
         <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem key={faq.question} value={`item-${index}`} className="landing-card border border-border/60">
+            <AccordionItem key={faq.question} value={`item-${index}`} className="poster-card">
               <AccordionTrigger className="text-left text-lg font-semibold text-foreground">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-ink-secondary">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

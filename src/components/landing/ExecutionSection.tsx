@@ -139,8 +139,7 @@ function AISimulation() {
         <div
           className={cn(
             "absolute -bottom-3 left-1/2 -translate-x-1/2",
-            "px-4 py-2 bg-gradient-to-r from-primary to-violet-500 text-white text-xs font-semibold rounded-full",
-            "shadow-lg shadow-primary/30",
+            "sticker-card px-4 py-2 text-xs font-semibold bg-[hsl(var(--glaze-pink))]",
             "transition-all duration-700 delay-700",
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}
@@ -157,9 +156,9 @@ export function ExecutionSection() {
 
   return (
     <section ref={sectionRef} id="execution" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 left-0 w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-3xl" />
+      <div className="absolute inset-x-0 top-0 h-[55%] bg-[hsl(var(--glow-green))]" />
+      <div className="absolute -left-24 top-10 w-[360px] h-[360px] bg-[hsl(var(--glow-purple))] rounded-full opacity-90" />
+      <div className="absolute inset-0 grid-pattern opacity-10" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div
@@ -169,12 +168,14 @@ export function ExecutionSection() {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
-            This is <span className="gradient-text">exactly</span> what we built
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            A tool that shows you how AI sees your brand—and gives you the playbook to become the answer.
-          </p>
+          <div className="poster-card inline-block px-6 py-5">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+              This is <span className="highlight-pink">exactly</span> what we built
+            </h2>
+            <p className="text-lg text-ink-secondary leading-relaxed max-w-2xl mx-auto">
+              A tool that shows you how AI sees your brand—and gives you the playbook to become the answer.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
@@ -189,14 +190,14 @@ export function ExecutionSection() {
               isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <div className="space-y-5">
+            <div className="poster-card p-6 space-y-5">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
                 We built this because we needed it ourselves.
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-ink-secondary leading-relaxed">
                 When we saw traffic from AI platforms overtaking traditional search for our own projects, we had no way to understand it. No dashboard. No insights. No strategy.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-ink-secondary leading-relaxed">
                 So we built one. What you see here is the same tool we use internally—now available to every brand navigating this shift.
               </p>
             </div>
@@ -204,10 +205,10 @@ export function ExecutionSection() {
             <div className="space-y-4 pt-2">
               {["Real-time monitoring of AI mentions across platforms", "Actionable data—not vanity metrics", "Built by practitioners, not observers"].map((point) => (
                 <div key={point} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
+                  <div className="w-5 h-5 rounded-full bg-[hsl(var(--glaze-lime))] border-2 border-border flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-foreground" />
                   </div>
-                  <p className="text-foreground/80 text-sm leading-relaxed">{point}</p>
+                  <p className="text-ink-secondary text-sm leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -223,14 +224,17 @@ export function ExecutionSection() {
         >
           <div className="text-center mb-10">
             <h3 className="text-xl md:text-2xl font-semibold text-foreground">The industry is shifting. We're ready.</h3>
-            <p className="text-sm md:text-base text-muted-foreground mt-3">
+            <p className="text-sm md:text-base text-ink-secondary mt-3">
               Social proof from the people shaping the future of search.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-card/40 border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
-              <p className="text-foreground/80 leading-relaxed mb-6">
+            <div className="poster-card p-6">
+              <div className="sticker-card bg-[hsl(var(--glaze-lime))] text-xs font-semibold px-3 py-1 inline-block mb-4 -rotate-1">
+                Social proof
+              </div>
+              <p className="text-ink-secondary leading-relaxed mb-6">
                 "60% of searches now end without a click. If you aren't the cited answer, you aren't seen at all."
               </p>
               <div className="flex items-center gap-3">
@@ -242,13 +246,16 @@ export function ExecutionSection() {
                 />
                 <div>
                   <p className="text-sm font-semibold text-foreground">HubSpot Research</p>
-                  <p className="text-xs text-muted-foreground">Marketing Trends Report</p>
+                  <p className="text-xs text-ink-secondary">Marketing Trends Report</p>
                 </div>
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-card/40 border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
-              <p className="text-foreground/80 leading-relaxed mb-6">
+            <div className="poster-card p-6">
+              <div className="sticker-card bg-[hsl(var(--glaze-pink))] text-xs font-semibold px-3 py-1 inline-block mb-4 rotate-1">
+                Shift
+              </div>
+              <p className="text-ink-secondary leading-relaxed mb-6">
                 "We are moving from a world of search engine optimization to 'Search Everywhere Optimization.'"
               </p>
               <div className="flex items-center gap-3">
@@ -260,13 +267,16 @@ export function ExecutionSection() {
                 />
                 <div>
                   <p className="text-sm font-semibold text-foreground">Neil Patel</p>
-                  <p className="text-xs text-muted-foreground">CMO & Co-Founder, NP Digital</p>
+                  <p className="text-xs text-ink-secondary">CMO & Co-Founder, NP Digital</p>
                 </div>
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-card/40 border border-border/40 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
-              <p className="text-foreground/80 leading-relaxed mb-6">
+            <div className="poster-card p-6">
+              <div className="sticker-card bg-[hsl(var(--glaze-mint))] text-xs font-semibold px-3 py-1 inline-block mb-4 -rotate-1">
+                Founder quote
+              </div>
+              <p className="text-ink-secondary leading-relaxed mb-6">
                 "The future of search is not about lists of links. It's about getting the answer. It's about a shift from search engines to answer engines."
               </p>
               <div className="flex items-center gap-3">
@@ -278,7 +288,7 @@ export function ExecutionSection() {
                 />
                 <div>
                   <p className="text-sm font-semibold text-foreground">Sam Altman</p>
-                  <p className="text-xs text-muted-foreground">CEO, OpenAI</p>
+                  <p className="text-xs text-ink-secondary">CEO, OpenAI</p>
                 </div>
               </div>
             </div>

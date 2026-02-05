@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { Button } from "@/components/ui/Button";
 
 type AuditFormState = {
   fullName: string;
@@ -68,7 +69,7 @@ const AuditForm = () => {
               value={form.fullName}
               onChange={onChange("fullName")}
               placeholder="Enter your full name..."
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-text placeholder:text-text-muted/70 outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40"
+              className="w-full rounded-xl border-2 border-border bg-white px-4 py-3 text-text placeholder:text-[hsl(var(--ink-secondary))] outline-none focus:ring-2 focus:ring-[hsl(var(--glow-green))]"
               required
             />
           </div>
@@ -80,7 +81,7 @@ const AuditForm = () => {
               value={form.websiteUrl}
               onChange={onChange("websiteUrl")}
               placeholder="yourwebsite.com"
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-text placeholder:text-text-muted/70 outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40"
+              className="w-full rounded-xl border-2 border-border bg-white px-4 py-3 text-text placeholder:text-[hsl(var(--ink-secondary))] outline-none focus:ring-2 focus:ring-[hsl(var(--glow-green))]"
               required
             />
           </div>
@@ -92,18 +93,15 @@ const AuditForm = () => {
               value={form.contactEmail}
               onChange={onChange("contactEmail")}
               placeholder="Your email..."
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-text placeholder:text-text-muted/70 outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40"
+              className="w-full rounded-xl border-2 border-border bg-white px-4 py-3 text-text placeholder:text-[hsl(var(--ink-secondary))] outline-none focus:ring-2 focus:ring-[hsl(var(--glow-green))]"
               required
             />
           </div>
 
           <div className="pt-2 flex justify-end">
-            <button
-              type="submit"
-              className="px-8 py-4 bg-primary text-text-on-primary font-semibold rounded-xl hover:bg-primary-hover transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
-            >
+            <Button type="submit" variant="hero" size="xl">
               Get free AI audit
-            </button>
+            </Button>
           </div>
         </form>
       </div>

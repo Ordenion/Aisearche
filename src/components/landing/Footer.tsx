@@ -14,10 +14,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-center md:text-left">
             <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">A</span>
-              </div>
-              <span className="font-semibold text-lg text-foreground">Aisearche</span>
+              <img
+                src="/logo.png"
+                alt="WebGlazer"
+                className="w-8 h-8 rounded-lg object-contain"
+              />
+              <span className="font-semibold text-lg text-foreground">WebGlazer</span>
             </div>
             <p className="text-xs text-muted-foreground max-w-xs">
               You build the business. We make sure the machines know how to sell it.
@@ -29,7 +31,7 @@ const Footer = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-foreground transition-colors underline-offset-4 hover:underline decoration-[hsl(var(--glow-green))]"
               >
                 {link.label}
               </a>
@@ -44,7 +46,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            Copyright © 2026 Aisearche. All rights reserved.
+            Copyright © 2026 WebGlazer. All rights reserved.
           </p>
         </div>
       </div>

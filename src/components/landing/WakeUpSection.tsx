@@ -78,58 +78,33 @@ export function WakeUpSection() {
 
   return (
     <section id="wake-up" className="relative py-24 md:py-40 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-primary/5" />
-
-      <div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20"
-        style={{
-          background: "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)",
-          animation: "pulse 8s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15"
-        style={{
-          background: "radial-gradient(circle, hsl(var(--glow-purple)) 0%, transparent 70%)",
-          animation: "pulse 8s ease-in-out infinite 2s",
-        }}
-      />
+      <div className="absolute inset-x-0 top-0 h-[55%] bg-[hsl(var(--glow-purple))]" />
+      <div className="absolute -right-24 top-10 w-[360px] h-[360px] bg-[hsl(var(--glow-green))] rounded-full opacity-90" />
+      <div className="absolute inset-0 grid-pattern opacity-10" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="text-center mb-20">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-6">The Numbers Don't Lie</p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 tracking-tight">
-            The Future of Sales is <span className="gradient-text">Already Here</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            While you're optimizing for yesterday's search engines, your customers are making decisions in AI conversations.
-          </p>
+          <div className="poster-card inline-block px-6 py-5">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4">The Numbers Don't Lie</p>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight">
+              The Future of Sales is <span className="highlight-lime">Already Here</span>
+            </h2>
+            <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
+              While you're optimizing for yesterday's search engines, your customers are making decisions in AI conversations.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
-            const colorClasses: Record<StatColor, string> = {
-              primary: "text-primary border-primary/20 bg-primary/5",
-              "glow-green": "text-glow-green border-glow-green/20 bg-glow-green/5",
-              "glow-purple": "text-glow-purple border-glow-purple/20 bg-glow-purple/5",
-              "glow-orange": "text-glow-orange border-glow-orange/20 bg-glow-orange/5",
-            };
-
-            const textClass =
-              stat.color === "primary"
-                ? "text-primary"
-                : stat.color === "glow-green"
-                  ? "text-glow-green"
-                  : stat.color === "glow-purple"
-                    ? "text-glow-purple"
-                    : "text-glow-orange";
+            const textClass = "text-foreground";
 
             return (
               <div key={stat.label} ref={refs[index]} className="group relative">
-                <div className="glass-card rounded-2xl p-6 md:p-8 h-full border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${colorClasses[stat.color]}`}>
-                    <Icon size={24} />
+                <div className={`sticker-card rounded-2xl p-6 md:p-8 h-full ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}`}>
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 border-2 border-border bg-[hsl(var(--glaze-mint))]`}>
+                    <Icon size={24} className="text-foreground" />
                   </div>
 
                   <div className="mb-4 flex items-end gap-1">
@@ -142,7 +117,7 @@ export function WakeUpSection() {
                   </div>
 
                   <p className="text-foreground font-semibold text-lg mb-2">{stat.label}</p>
-                  <p className="text-muted-foreground text-sm">{stat.description}</p>
+                  <p className="text-ink-secondary text-sm">{stat.description}</p>
                 </div>
               </div>
             );
@@ -150,10 +125,10 @@ export function WakeUpSection() {
         </div>
 
         <div className="mt-20 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass border border-primary/20">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-muted-foreground">
-              Your competitors are already optimizing for AI. <a href="#pricing" className="text-primary font-semibold hover:underline">Don't get left behind →</a>
+          <div className="sticker-card inline-flex items-center gap-3 px-6 py-3">
+            <div className="w-2 h-2 rounded-full bg-[hsl(var(--glow-green))]" />
+            <span className="text-ink-secondary">
+              Your competitors are already optimizing for AI. <a href="#pricing" className="font-semibold underline decoration-[hsl(var(--glow-green))]">Don't get left behind →</a>
             </span>
           </div>
         </div>

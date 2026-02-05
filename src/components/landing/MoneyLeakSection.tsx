@@ -46,7 +46,7 @@ function ScanVisual() {
   ];
 
   return (
-    <div ref={ref} className="glass-card rounded-2xl p-6 w-full max-w-md">
+    <div ref={ref} className="poster-card rounded-2xl p-6 w-full max-w-md">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <Scan size={18} className="text-primary" />
@@ -58,9 +58,9 @@ function ScanVisual() {
         </div>
       </div>
 
-      <div className="h-1 w-full bg-muted rounded-full mb-6 overflow-hidden">
+      <div className="h-1 w-full bg-[hsl(var(--glaze-mint))] rounded-full mb-6 overflow-hidden border-2 border-border">
         <div
-          className="h-full bg-gradient-to-r from-primary to-glow-purple transition-all duration-100"
+          className="h-full bg-gradient-to-r from-[hsl(var(--glow-green))] to-[hsl(var(--glow-purple))] transition-all duration-100"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -69,21 +69,21 @@ function ScanVisual() {
         {scanItems.map((item, index) => {
           const baseClasses =
             item.status === "success"
-              ? { bg: "hsl(var(--glow-green) / 0.05)", border: "hsl(var(--glow-green) / 0.2)", icon: <Check size={16} className="text-glow-green" /> }
+              ? { bg: "hsl(var(--glaze-lime))", border: "hsl(var(--border))", icon: <Check size={16} className="text-foreground" /> }
               : item.status === "warning"
-                ? { bg: "hsl(var(--glow-orange) / 0.05)", border: "hsl(var(--glow-orange) / 0.2)", icon: <AlertTriangle size={16} className="text-glow-orange" /> }
-                : { bg: "hsl(var(--destructive) / 0.05)", border: "hsl(var(--destructive) / 0.2)", icon: <X size={16} className="text-destructive" /> };
+                ? { bg: "hsl(var(--glaze-pink))", border: "hsl(var(--border))", icon: <AlertTriangle size={16} className="text-foreground" /> }
+                : { bg: "hsl(var(--glaze-mint))", border: "hsl(var(--border))", icon: <X size={16} className="text-foreground" /> };
 
           return (
             <div
               key={item.label}
-              className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-500 ${
+              className={`flex items-center gap-3 p-3 rounded-lg border-2 transition-all duration-500 ${
                 isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
               }`}
               style={{ transitionDelay: `${index * 150}ms`, backgroundColor: baseClasses.bg, borderColor: baseClasses.border }}
             >
               {baseClasses.icon}
-              <span className="font-mono text-sm text-muted-foreground">{item.label}</span>
+              <span className="font-mono text-sm text-ink-secondary">{item.label}</span>
             </div>
           );
         })}
@@ -104,7 +104,7 @@ function GraphVisual() {
   ];
 
   return (
-    <div ref={ref} className="glass-card rounded-2xl p-6 w-full max-w-md">
+    <div ref={ref} className="poster-card rounded-2xl p-6 w-full max-w-md">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <Network size={18} className="text-glow-purple" />
@@ -134,10 +134,10 @@ function GraphVisual() {
             style={{ left: `${node.x}%`, top: `${node.y}%`, transitionDelay: `${index * 100}ms` }}
           >
             <div
-              className={`px-3 py-1.5 rounded-lg font-mono text-xs whitespace-nowrap ${
+              className={`px-3 py-1.5 rounded-lg font-mono text-xs whitespace-nowrap border-2 ${
                 node.primary
-                  ? "bg-primary/20 border border-primary/40 text-primary"
-                  : "bg-muted border border-border text-muted-foreground"
+                  ? "bg-[hsl(var(--glaze-lime))] border-border text-foreground"
+                  : "bg-[hsl(var(--glaze-mint))] border-border text-ink-secondary"
               }`}
             >
               {node.label}
@@ -159,7 +159,7 @@ function MetricsVisual() {
   ];
 
   return (
-    <div ref={ref} className="glass-card rounded-2xl p-6 w-full max-w-md">
+    <div ref={ref} className="poster-card rounded-2xl p-6 w-full max-w-md">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <TrendingUp size={18} className="text-glow-orange" />
@@ -175,26 +175,26 @@ function MetricsVisual() {
         {metrics.map((metric, index) => (
           <div
             key={metric.label}
-            className={`p-4 rounded-xl border border-border/50 bg-muted/30 transition-all duration-700 ${
+            className={`p-4 rounded-xl border-2 border-border bg-[hsl(var(--glaze-mint))] transition-all duration-700 ${
               isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: `${index * 150}ms` }}
           >
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground text-sm">{metric.label}</span>
+              <span className="text-ink-secondary text-sm">{metric.label}</span>
               <div className="flex items-center gap-2">
                 <span
                   className={`text-xl font-bold ${
                     metric.color === "primary"
-                      ? "text-primary"
+                      ? "text-foreground"
                       : metric.color === "glow-purple"
-                        ? "text-glow-purple"
-                        : "text-glow-orange"
+                        ? "text-foreground"
+                        : "text-foreground"
                   }`}
                 >
                   {metric.value}
                 </span>
-                <TrendingUp size={16} className="text-glow-green" />
+                <TrendingUp size={16} className="text-foreground" />
               </div>
             </div>
             <div className="flex items-end gap-1 mt-3 h-8">
@@ -203,10 +203,10 @@ function MetricsVisual() {
                   key={`${metric.label}-${i}`}
                   className={`flex-1 rounded-sm transition-all duration-500 ${
                     metric.color === "primary"
-                      ? "bg-primary/40"
+                      ? "bg-[hsl(var(--glow-green))]"
                       : metric.color === "glow-purple"
-                        ? "bg-glow-purple/40"
-                        : "bg-glow-orange/40"
+                        ? "bg-[hsl(var(--glow-purple))]"
+                        : "bg-[hsl(var(--glow-green))]"
                   }`}
                   style={{ height: isInView ? `${height}%` : "10%", transitionDelay: `${index * 150 + i * 50}ms` }}
                 />
@@ -246,17 +246,21 @@ const steps = [
 export function MoneyLeakSection() {
   return (
     <section id="money-leak" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-primary/5" />
+      <div className="absolute inset-x-0 top-0 h-[55%] bg-[hsl(var(--glow-green))]" />
+      <div className="absolute -left-20 top-16 w-[320px] h-[320px] bg-[hsl(var(--glow-purple))] rounded-full opacity-90" />
+      <div className="absolute inset-0 grid-pattern opacity-10" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="text-center mb-20 md:mb-28">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-6">How It Works</p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 tracking-tight text-balance">
-            Turn AI Search Insights Into <span className="gradient-text">New Customers</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A simple 3-step process to make your business the answer AI recommends.
-          </p>
+          <div className="poster-card inline-block px-6 py-5">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4">How It Works</p>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight text-balance">
+              Turn AI Search Insights Into <span className="highlight-lime">New Customers</span>
+            </h2>
+            <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
+              A simple 3-step process to make your business the answer AI recommends.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-24 md:space-y-40">
@@ -272,13 +276,13 @@ export function MoneyLeakSection() {
 
                 <div className="flex-1 w-full">
                   <div className={`flex flex-col ${isReversed ? "lg:items-end lg:text-right" : ""}`}>
-                    <span className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+                    <span className="highlight-pink text-2xl md:text-3xl font-bold mb-4">
                       {step.number}
                     </span>
 
-                    <div className="max-w-lg">
-                      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{step.title}</h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
+                    <div className="poster-card p-6 max-w-lg">
+                      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{step.title}</h3>
+                      <p className="text-lg text-ink-secondary leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 </div>
@@ -288,10 +292,10 @@ export function MoneyLeakSection() {
         </div>
 
         <div className="mt-24 md:mt-32 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass border border-primary/20">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-muted-foreground">
-              Ready to get started? <a href="#pricing" className="text-primary font-semibold hover:underline">See pricing →</a>
+          <div className="sticker-card inline-flex items-center gap-3 px-6 py-3">
+            <div className="w-2 h-2 rounded-full bg-[hsl(var(--glow-green))]" />
+            <span className="text-ink-secondary">
+              Ready to get started? <a href="#pricing" className="font-semibold underline decoration-[hsl(var(--glow-green))]">See pricing →</a>
             </span>
           </div>
         </div>

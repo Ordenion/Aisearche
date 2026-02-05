@@ -12,8 +12,8 @@ export function FloatingCard({ children, className, delay = 0, reverse = false }
   return (
     <div
       className={cn(
-        "glass-card rounded-xl p-4 shadow-lg",
-        reverse ? "animate-float-reverse" : "animate-float",
+        "sticker-card p-4",
+        reverse ? "animate-float-reverse rotate-2" : "animate-float -rotate-1",
         className
       )}
       style={{ animationDelay: `${delay}s` }}
