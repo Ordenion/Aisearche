@@ -17,13 +17,13 @@ export function AuditInput() {
       <div className="relative">
         <div className="poster-card rounded-2xl p-5 sm:p-6 md:p-8 bg-card">
           <div className="sticker-card bg-[hsl(var(--glaze-pink))] text-xs font-semibold px-3 py-1 absolute -top-4 right-6 rotate-2">
-            Instant audit →
+            Run Scan →
           </div>
 
           <div className="relative z-10">
             <div className="flex items-center gap-2 text-xs font-medium text-foreground mb-4">
-              <Sparkles size={14} />
-              <span>Instant audit</span>
+              <Sparkles size={24} />
+              <span>Can AI see your business?</span>
             </div>
 
             <div className="relative mb-5 sm:mb-6">
@@ -66,7 +66,7 @@ export function AuditInput() {
             </Button>
 
             <p className="text-xs text-ink-secondary text-center mt-4">
-              Built on modern infrastructure for instant analysis. No credit card required.
+              {/* Built on modern infrastructure for instant analysis. No credit card required. */}
             </p>
           </div>
         </div>

@@ -87,10 +87,11 @@ export function WakeUpSection() {
           <div className="poster-card inline-block px-6 py-5">
             <p className="text-xs font-semibold tracking-widest uppercase mb-4">The Numbers Don't Lie</p>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight">
-              The Future of Sales is <span className="highlight-lime">Already Here</span>
+              {/* The Future of Sales is <span className="highlight-lime">Already Here</span> */}
+              Your Customers Are <span className="highlight-lime">Using AI to Decide</span> What to Buy.
             </h2>
             <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
-              While you're optimizing for yesterday's search engines, your customers are making decisions in AI conversations.
+              While you're optimizing for yesterday's search engines, your customers are making decisions in AI conversations. You are not just behind, you are Invisible.
             </p>
           </div>
         </div>

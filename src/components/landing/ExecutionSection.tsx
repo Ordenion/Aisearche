@@ -170,7 +170,7 @@ export function ExecutionSection() {
         >
           <div className="poster-card inline-block px-6 py-5">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
-              This is <span className="highlight-pink">exactly</span> what we built
+              Here is <span className="highlight-pink">why</span> we build WebGlazer
             </h2>
             <p className="text-lg text-ink-secondary leading-relaxed max-w-2xl mx-auto">
               A tool that shows you how AI sees your brand—and gives you the playbook to become the answer.
@@ -225,14 +225,14 @@ export function ExecutionSection() {
           <div className="text-center mb-10">
             <h3 className="text-xl md:text-2xl font-semibold text-foreground">The industry is shifting. We're ready.</h3>
             <p className="text-sm md:text-base text-ink-secondary mt-3">
-              Social proof from the people shaping the future of search.
+              We are not imagining it.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="poster-card p-6">
               <div className="sticker-card bg-[hsl(var(--glaze-lime))] text-xs font-semibold px-3 py-1 inline-block mb-4 -rotate-1">
-                Social proof
+                Zero Clicks
               </div>
               <p className="text-ink-secondary leading-relaxed mb-6">
                 "60% of searches now end without a click. If you aren't the cited answer, you aren't seen at all."
@@ -253,7 +253,7 @@ export function ExecutionSection() {
 
             <div className="poster-card p-6">
               <div className="sticker-card bg-[hsl(var(--glaze-pink))] text-xs font-semibold px-3 py-1 inline-block mb-4 rotate-1">
-                Shift
+                Marketing Shift
               </div>
               <p className="text-ink-secondary leading-relaxed mb-6">
                 "We are moving from a world of search engine optimization to 'Search Everywhere Optimization.'"
@@ -274,7 +274,7 @@ export function ExecutionSection() {
 
             <div className="poster-card p-6">
               <div className="sticker-card bg-[hsl(var(--glaze-mint))] text-xs font-semibold px-3 py-1 inline-block mb-4 -rotate-1">
-                Founder quote
+                Fuure is AI
               </div>
               <p className="text-ink-secondary leading-relaxed mb-6">
                 "The future of search is not about lists of links. It's about getting the answer. It's about a shift from search engines to answer engines."
