@@ -42,7 +42,7 @@ function ScanVisual() {
     { status: "success" as const, label: "robots.txt accessible" },
     { status: "success" as const, label: "Structured data found" },
     { status: "warning" as const, label: "Pricing not machine-readable" },
-    { status: "error" as const, label: "AI crawl blocked" },
+    { status: "error" as const, label: "AI access blocked" },
   ];
 
   return (
@@ -222,23 +222,23 @@ function MetricsVisual() {
 const steps = [
   {
     number: "01",
-    title: "Scan Your Presence",
+    title: "WebGlazer Scans Your Site",
     description:
       "We analyze how AI platforms currently see (or don't see) your business. Our audit crawls the same paths AI assistants use, exposing blind spots in your visibility.",
     Visual: ScanVisual,
   },
   {
     number: "02",
-    title: "Translate for AI",
+    title: "Glaze the AI",
     description:
-      "We structure your content so AI reads it as trusted facts. Think of it as teaching ChatGPT your entire business—prices, services, and unique value—in a language it understands.",
+      "Automatically create an AI-friendly (glazed) version of your site for your new VIP visitors - AI traffic. Think of it as teaching ChatGPT your entire business — prices, services, and unique value—in a language it understands.",
     Visual: GraphVisual,
   },
   {
     number: "03",
     title: "Monitor & Scale",
     description:
-      "Track your AI visibility weekly and discover new revenue opportunities. See exactly when and how AI platforms recommend your business to potential customers.",
+      "Track your AI visibility weekly and discover new revenue opportunities. See exactly when and how AI platforms recommend your business to potential customers. Metrics like brand mentions, impressions, and sentiment are hard to track - which is why WebGlazer is so powerful! ",
     Visual: MetricsVisual,
   },
 ];
@@ -255,7 +255,7 @@ export function MoneyLeakSection() {
           <div className="poster-card inline-block px-6 py-5">
             <p className="text-xs font-semibold tracking-widest uppercase mb-4">How It Works</p>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight text-balance">
-              Turn AI Search Insights Into <span className="highlight-lime">New Customers</span>
+              AI can’t read your site... <span className="highlight-lime">let’s fix that.</span>
             </h2>
             <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
               A simple 3-step process to make your business the answer AI recommends.

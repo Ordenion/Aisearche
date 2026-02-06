@@ -2,14 +2,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    question: "Is this just another AI tool?",
+    question: "Is this just another SEO tool?",
     answer:
-      "No. It's a growth command center plugged into your existing funnels. We identify leaks, score urgency, and tell your team exactly what to execute next—in plain language. AI handles analysis, you handle implementation.",
+      "Traditional SEO focuses on improving a website's ranking in search engine results pages (SERPs) using keywords and backlinks. GEO, on the other hand, aims to influence the generation of AI-driven answers and search results by optimizing content for AI-powered search engines. While traditional SEO targets click-through rates by positioning web pages higher in link-based results, GEO prioritizes creating content that AI systems can synthesize and cite within their conversational responses. This fundamental shift reflects how users increasingly seek direct answers from AI rather than browsing multiple websites, requiring content creators to optimize for AI comprehension and attribution rather than traditional ranking signals.",
   },
   {
-    question: "Do I need to switch platforms?",
+    question: "What Is Answer Engine Optimization/ Generative Engine Optimization?",
     answer:
-      "Absolutely not. We plug into your current stack—landing pages, CRM, automations, payment processors—and diagnose where the money slips through. No migrations, no new dashboards for your team to learn.",
+      "Answer Engine Optimization (AEO), also known as Generative Engine Optimization (GEO), is the practice of optimizing your brand's content and digital presence to appear in AI-powered answer engines like Gemini, ChatGPT, Claude, Perplexity... Unlike traditional SEO which focuses on ranking in search results, AEO ensures your products, services, and brand information are accurately represented when AI systems generate responses to user queries. Success in AEO requires two critical elements: creating optimized GEO content that's structured for AI comprehension (including clear product descriptions, detailed specifications, FAQ formats, and comparison data), and ensuring this content is cited across a broad range of authoritative sources. Answer engines typically synthesize information from multiple websites, reviews, articles, and databases to build confidence in their responses.",
   },
   {
     question: "How fast will we see results?",

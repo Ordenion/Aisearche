@@ -16,27 +16,26 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="text-center max-w-4xl mx-auto mb-6">
           <p className="text-ink-secondary text-sm md:text-base uppercase tracking-wider mb-4">
-            The Google Game is Old News
-          </p>
+            {/* Is your most valuable website visitor human or AI ? */}
+                      </p>
           <div className="relative poster-card px-6 py-8 md:px-10 md:py-10 text-left md:text-center">
             <div className="sticker-card bg-[hsl(var(--glaze-pink))] text-xs font-semibold tracking-wide px-3 py-1 absolute -top-4 left-6 -rotate-2">
               Why now
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-heading mb-6 leading-tight text-balance">
-              Stop Chasing Clicks. Let <span className="highlight-pink">AI</span> <span className="highlight-lime">Close Sales</span> For You.
+              The Future of Sales is Here. Let <span className="highlight-pink">AI</span> <span className="highlight-lime">Close Sales</span> For You.
             </h1>
             <p className="text-lg md:text-xl text-ink-secondary max-w-3xl mx-auto leading-relaxed">
-              50% of your customers now ask AI what to buy before they search where to buy. If ChatGPT cannot read your
-              pricing or offers, you aren't just invisible — you're handing easy revenue to your competitors.
+              Your customers are asking AI what to buy before they search where to buy.     Turn ChatGPT, Gemini, and Perplexity into your 24/7 sales agents.
             </p>
             <div className="sticker-card bg-[hsl(var(--glaze-mint))] text-xs font-semibold tracking-wide px-3 py-1 absolute -bottom-4 right-6 rotate-2">
-              New behavior shift
+              AI is your most valuable website visitor
             </div>
           </div>
         </div>
 
         <p className="text-center text-foreground font-medium mb-12">
-          Turn ChatGPT, Gemini, and Perplexity into your 24/7 sales agents.
+          {/* Turn ChatGPT, Gemini, and Perplexity into your 24/7 sales agents. */}
         </p>
 
         <div className="relative mb-16">
@@ -62,7 +61,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="text-xs text-ink-secondary">Conversion Rate</p>
-                  <p className="text-lg font-semibold text-foreground">3.2x Higher</p>
+                  <p className="text-lg font-semibold text-foreground">6x Higher</p>
                 </div>
               </div>
             </FloatingCard>
