@@ -19,7 +19,7 @@ const Home = () => {
         <WakeUpSection />
         <MoneyLeakSection />
         <FunFactorSection />
-        <ExecutionSection />
+        {/* <ExecutionSection /> */}
         <PricingSection />
         <FAQSection />
         <CTASection />
