@@ -26,17 +26,13 @@ export function HeroSection() {
               The Future of Sales is Here. Let <span className="highlight-pink">AI</span> <span className="highlight-lime">Close Sales</span> For You.
             </h1>
             <p className="text-lg md:text-xl text-ink-secondary max-w-3xl mx-auto leading-relaxed">
-              Your customers are asking AI what to buy before they search where to buy.     Turn ChatGPT, Gemini, and Perplexity into your 24/7 sales agents.
+              Turn ChatGPT, Gemini, and Perplexity into your 24/7 sales agents.
             </p>
             <div className="sticker-card bg-[hsl(var(--glaze-mint))] text-xs font-semibold tracking-wide px-3 py-1 absolute -bottom-4 right-6 rotate-2">
               AI is your most valuable website visitor
             </div>
           </div>
         </div>
-
-        <p className="text-center text-foreground font-medium mb-12">
-          {/* Turn ChatGPT, Gemini, and Perplexity into your 24/7 sales agents. */}
-        </p>
 
         <div className="relative mb-16">
           <AuditInput />

@@ -3,7 +3,6 @@ import Footer from "@/components/landing/Footer";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { WakeUpSection } from "@/components/landing/WakeUpSection";
 import { MoneyLeakSection } from "@/components/landing/MoneyLeakSection";
-import { ExecutionSection } from "@/components/landing/ExecutionSection";
 import { FunFactorSection } from "@/components/landing/FunFactorSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { FAQSection } from "@/components/landing/FAQSection";
@@ -19,7 +18,6 @@ const Home = () => {
         <WakeUpSection />
         <MoneyLeakSection />
         <FunFactorSection />
-        {/* <ExecutionSection /> */}
         <PricingSection />
         <FAQSection />
         <CTASection />
