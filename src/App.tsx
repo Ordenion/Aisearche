@@ -5,10 +5,18 @@ import Audit from './pages/Audit';
 import AppShell from './layouts/AppShell';
 import AppHome from './pages/AppHome';
 import NotFound from './components/NotFound';
-import { isAuthenticated } from './lib/auth';
+import { useAuth } from './contexts/AuthContext';
 
 const RequireAuth = ({ children }: { children?: any }) => {
-  if (!isAuthenticated()) return <Navigate to="/login" replace />;
+  const { user, loading } = useAuth();
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="w-8 h-8 border-2 border-[hsl(var(--glow-green))] border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+  if (!user) return <Navigate to="/login" replace />;
   return children;
 };
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/Button";
-import { Menu, X } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { Menu, X, LogOut } from "lucide-react";
 
 const navLinks = [
   { label: "Why Now", href: "#wake-up" },
@@ -13,6 +15,8 @@ const navLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -45,9 +49,38 @@ const Header = () => {
             </nav>
 
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="ghost" size="sm" className="border-2 border-border">
-                Sign in
-              </Button>
+              {user ? (
+                <>
+                  <Link to="/app">
+                    <Button variant="ghost" size="sm" className="border-2 border-border gap-2">
+                      {user.photoURL && (
+                        <img
+                          src={user.photoURL}
+                          alt=""
+                          className="w-6 h-6 rounded-full"
+                          referrerPolicy="no-referrer"
+                        />
+                      )}
+                      {user.displayName?.split(' ')[0] ?? 'Dashboard'}
+                    </Button>
+                  </Link>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="border-2 border-border"
+                    onClick={async () => { await signOut(); navigate('/'); }}
+                    aria-label="Sign out"
+                  >
+                    <LogOut size={16} />
+                  </Button>
+                </>
+              ) : (
+                <Link to="/login">
+                  <Button variant="ghost" size="sm" className="border-2 border-border">
+                    Sign in
+                  </Button>
+                </Link>
+              )}
               <Button
                 size="sm"
                 className="bg-[hsl(var(--glow-purple))] text-foreground border-2 border-border px-4 py-2 hover:-translate-y-0.5 active:translate-y-0.5"
@@ -79,9 +112,41 @@ const Header = () => {
                   </a>
                 ))}
                 <div className="flex flex-col gap-2 mt-4">
-                  <Button variant="ghost" className="w-full justify-center border-2 border-border">
-                    Sign in
-                  </Button>
+                  {user ? (
+                    <>
+                      <Link to="/app" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Button variant="ghost" className="w-full justify-center border-2 border-border gap-2">
+                          {user.photoURL && (
+                            <img
+                              src={user.photoURL}
+                              alt=""
+                              className="w-6 h-6 rounded-full"
+                              referrerPolicy="no-referrer"
+                            />
+                          )}
+                          Dashboard
+                        </Button>
+                      </Link>
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-center border-2 border-border gap-2"
+                        onClick={async () => {
+                          await signOut();
+                          setIsMobileMenuOpen(false);
+                          navigate('/');
+                        }}
+                      >
+                        <LogOut size={16} />
+                        Sign out
+                      </Button>
+                    </>
+                  ) : (
+                    <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Button variant="ghost" className="w-full justify-center border-2 border-border">
+                        Sign in
+                      </Button>
+                    </Link>
+                  )}
                   <Button
                     className="w-full justify-center bg-[hsl(var(--glow-purple))] text-foreground border-2 border-border"
                   >
