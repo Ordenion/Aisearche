@@ -9,4 +9,11 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  server: {
+    host: true,
+  },
+  preview: {
+    host: true,
+    port: Number(process.env.PORT) || 8080,
+  }
 });
